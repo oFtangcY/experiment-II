@@ -1,0 +1,25 @@
+\documentclass{minimal}
+
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz}[european]
+    \draw (1,4) node[above]{AI GND}
+        to[R=$R_0$]
+        (6,4) node[above]{AI 1};
+    \draw (1,0) node[below]{AI 0} to[vsourcesin, a=$U_S$] (1,4);
+    \draw (1,0) to[R=$R_1$] (3,0);
+    \draw (3,0) to[american inductor=$L_1$] (4.5,0);
+    \draw (4.5,0) to[capacitor=$C_1$] (6,0);
+    \draw (6,0) to[capacitor=$C$] (6,4);
+    \draw (6,0) to[capacitor=$C_2$] (7.3,0);
+    \draw (7.3,0) to[american inductor=$L_2$] (8.7,0);
+    \draw (8.7,0) to[short] (9,0);
+    \draw (9,0) to[short] (9,4);
+    \draw (6,4) to[short] (9,4);
+    \draw (0.5,4) to[short] (1,4);
+    \draw (0.5,4) node[ground]{};
+\end{circuitikz}
+
+\end{document}
